@@ -93,7 +93,7 @@ jobs:
 
           kubectl set image daemonset/csi-secrets-store-provider-gcp \
             -n kube-system \
-            provider=cgr.dev/chainguard/secrets-store-csi-driver-provider-gcp:latest@sha256:5f7d984f210024efc3f671cb54d914dafb19b9d32feb756143787e17f612a502
+            provider=cgr.dev/chainguard/secrets-store-csi-driver-provider-gcp:latest@sha256:034ffcba9e86134f090181f6e7e38ab528cba6c7200ec98a0c7b00fe99a5690d
 
           # Wait for DaemonSets to become ready.
           kubectl rollout status daemonset -n kube-system csi-secrets-store
@@ -152,7 +152,7 @@ jobs:
             --cpu=30 --ram=100Gi \
             --bucket=${BUCKET} \
             --src-bucket=${SRC_BUCKET} \
-            --sdk-image ghcr.io/wolfi-dev/sdk:latest@sha256:8f48718d6a261b2c490a7e89e69f35afba4d1afb177baeaf7642f8e69fa4c63a \
+            --sdk-image ghcr.io/wolfi-dev/sdk:latest@sha256:ccb6f2fb751dace640d5a7c0084dbf0c00e836bd15ce0fc0c5c44227ed196a7d \
             --pending-timeout=10m \
             --secret-key \
             --arch=arm64
